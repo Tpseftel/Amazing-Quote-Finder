@@ -4,16 +4,11 @@ onload = function(){
 
 $( function() {
     $( ".datepicker" ).datepicker({
-        dateFormat: 'yy-mm-dd'
-    });
-
-    $('.datepicker').on('click',  function() {
-        console.log($('.datepicker').val());
+        dateFormat: 'yy-mm-dd',
+        orientation: "bottom right"
     });
 
 
-    $('#lar').click(function () {
-    });
 });
 
 
