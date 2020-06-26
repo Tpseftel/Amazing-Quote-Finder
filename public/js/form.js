@@ -1,3 +1,7 @@
 onload = function(){
-    alert('hello worldddddddddd');
+    console.log('Hello World');
 };
+
+$( function() {
+    $( ".datepicker" ).datepicker();
+  } );

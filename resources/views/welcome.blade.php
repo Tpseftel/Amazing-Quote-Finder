@@ -5,10 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
-        <!-- Fonts -->
+      <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-         <script src="{{ asset('js/form.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/form.js') }}"></script>
+       
         <!-- Styles -->
         <style>
             html, body {
@@ -85,6 +86,7 @@
                 </div>
 
                 <div class="links">
+                   Date picker: <input type="text" class="datepicker" />
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
