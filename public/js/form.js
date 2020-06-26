@@ -3,5 +3,17 @@ onload = function(){
 };
 
 $( function() {
-    $( ".datepicker" ).datepicker();
-  } );
+    $( ".datepicker" ).datepicker({
+        dateFormat: 'yy-mm-dd'
+    });
+
+    $('.datepicker').on('click',  function() {
+        console.log($('.datepicker').val());
+    });
+
+
+    $('#lar').click(function () {
+    });
+});
+
+

@@ -32388,7 +32388,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.datepicker').datepicker();
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(".datepicker").datepicker({
+  dateFormat: 'yy-mm-dd'
+});
 
 /***/ }),
 
