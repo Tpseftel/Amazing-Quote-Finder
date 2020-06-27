@@ -1,5 +1,8 @@
+// const moment = require("moment");
+
 $( function() {
     // Set up Form Validation
+    
    (function() {
         'use strict';
         window.addEventListener('load', function() {
@@ -28,31 +31,39 @@ $( function() {
     });
     $('.selectpicker').selectpicker();
 
+    // Set Symbol Disabled Input
+    $('#symbol-input').val( $('#company-select').val() );
 
 
 
-    function validateStartDate(){
-        const startDate = $('start-date').val();
-        if(!startDate){
-            alert('No start day');
-        }
-    }
+
+    // function validateStartDate(){
+    //     let startDate = $('#start-date');
+    //     // startDate = moment(startDate);
+    //     let error_text = '';
+    //     if(startDate.val()>3){
+    //        document.getElementById('start-date').setCustomValidity('Hello');
+    //        document.getElementById('start-date').reportValidity();
+    //     // document.getElementById("submit-btn").click();
+    //     }
+    // }
 
 
-
+    $('#company-select').change(function(){
+      $('#symbol-input').val( $(this).val() );
+    });
 
 
     $('#submit-btn').click(function () {
-        validateStartDate();
-        // const start_date = $( "#start-date" ).datepicker( "getDate" );
-        // const end_date = $( "#end-date" ).datepicker( "getDate" );
-        // const company_symbol = $('#company-symbol').val();
-        // const email = $('#email').val();
+        const start_date = $( "#start-date" ).datepicker( "getDate" );
+        const end_date = $( "#end-date" ).datepicker( "getDate" );
+        const company_symbol = $('#company-symbol').val();
+        const email = $('#email').val();
 
-        // console.log('Start Date:' + start_date );
-        // console.log('End Date:' + end_date );
-        // console.log('Copmany Symbol:' + company_symbol );
-        // console.log('Email:' + email );
+        console.log('Start Date:' + start_date );
+        console.log('End Date:' + end_date );
+        console.log('Copmany Symbol:' + company_symbol );
+        console.log('Email:' + email );
 
         // // console.log('Moment Now:' + moment(start_date).format('YYYY-MMMMM-dd'));
     });
