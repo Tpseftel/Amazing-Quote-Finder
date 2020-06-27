@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 import moment from "moment";
-window.moment = moment();
+window.moment = moment;
 
 import $ from 'jquery';
 window.$ = window.jQuery = $;
