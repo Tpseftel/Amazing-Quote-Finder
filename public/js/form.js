@@ -5,7 +5,9 @@ onload = function(){
 $( function() {
     $( ".datepicker" ).datepicker({
         dateFormat: 'yy-mm-dd',
-        orientation: "bottom right"
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:+0", 
     });
 
 
