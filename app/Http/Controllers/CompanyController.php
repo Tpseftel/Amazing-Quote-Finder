@@ -51,13 +51,15 @@ public function getHistoryData(Request $request)
                }
             },
         ],
-        'start_date' => [ 'required', 'max:2' ]
+        'start_date' => [ 'required', 'date', 'before_or_equal:end_date', 'before_or_equal:today'],
+        'end_date' => [ 'required', 'date', 'after_or_equal:start_date', 'before_or_equal:today'],
+        'email' => ['required','email']
     ]);
 
    if ($validator->fails()) {
         $error = $validator->errors()->first();
         dd($error);
-}
+    }
 
     dump($validated);
     return 'History Data';
