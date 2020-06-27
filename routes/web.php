@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/history', 'CompanyController@getHistoryData');
 Route::get('/company', 'CompanyController@index');
 
 
