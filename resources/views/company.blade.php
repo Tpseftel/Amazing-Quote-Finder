@@ -40,45 +40,31 @@
             <!--Start Date  -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                <label for="start-date" class="text-capitalize font-weight-bold">Start Date: </label>
-                    <input type="text" id="start-date" class="datepicker">
+                <label for="start-date" class=" text-capitalize font-weight-bold">Start Date: </label>
+                    <input type="text"  id="start-date" class="form-control datepicker">
                 </div>
             </div>
 
             <!-- End Date -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                <label for="end-date" class="text-capitalize font-weight-bold">End Date: </label>
-                    <input type="text" id="end-date" class="datepicker">
+                <label for="end-date" class="  text-capitalize font-weight-bold">End Date: </label>
+                    <input type="text" id="end-date" class="form-control datepicker">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="validationServer02">Last name</label>
-                    <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name"
-                        value="Otto" required>
-                    <div class="valid-feedback">
+                    <label for="email" class="font-weight-bold text-capitalize">Email:</label>
+                    <br>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <div class="invalid-feedback">
                         Looks good!
                     </div>
                 </div>
             </div>
             
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="validationServerUsername">Username</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                        </div>
-                        <input type="text" class="form-control is-invalid" id="validationServerUsername"
-                            placeholder="Username" aria-describedby="inputGroupPrepend3" required>
-                        <div class="invalid-feedback">
-                            Please choose a username.
-                        </div>
-                    </div>
-                </div>
-            </div>
+      
 
             <button class="btn btn-primary" id="submit-btn" type="submit">Submit form</button>
         </form>
