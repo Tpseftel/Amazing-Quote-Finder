@@ -26,17 +26,12 @@
             <!-- Company Symbol -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="validationServer01">Company Symbol</label>
+                    <label for="company-symbol" class="text-capitalize font-weight-bold" >Company Symbol:</label>
 
-
-                       
-                    <select class="selectpicker form-control" data-live-search="true">
-                        <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-                        <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                        <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                        <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                        <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-                        <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                    <select class="selectpicker form-control" id="company-symbol" data-live-search="true" style="border:1px solid blue;">
+                        @foreach($companies as $company)
+                            <option data-tokens="ketchup mustard" value= "{{$company['Symbol']}}" >{{$company['Company Name']}} </option>
+                        @endforeach
                     </select>
 
 
@@ -51,7 +46,7 @@
             <!--Start Date  -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                <label for="start-date" class=" text-capitalize font-weight-bold">Start Date: </label>
+                <label for="start-date" class="text-capitalize font-weight-bold">Start Date: </label>
                     <input type="text"  id="start-date" class="form-control datepicker">
                 </div>
             </div>
