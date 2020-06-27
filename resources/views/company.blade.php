@@ -11,11 +11,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/form.js') }}"></script>
-    <script>
-        $('#sandbox-container input').datepicker({
-        });
-    </script>
+    <script type="module" src="{{ asset('js/form.js') }}"></script>
+    
 </head>
 <input type="text" class="form-control">
 
@@ -24,6 +21,7 @@
         <h1 class=''>Form 1</h1>
 
         <form>
+
             <!-- Company Symbol -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
@@ -38,14 +36,22 @@
                     </div>
                 </div>
             </div>
+
+            <!--Start Date  -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <input type="text" class="datepicker">
+                <label for="start-date" class="text-capitalize font-weight-bold">Start Date: </label>
+                    <input type="text" id="start-date" class="datepicker">
                 </div>
             </div>
 
-
-
+            <!-- End Date -->
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                <label for="end-date" class="text-capitalize font-weight-bold">End Date: </label>
+                    <input type="text" id="end-date" class="datepicker">
+                </div>
+            </div>
 
             <div class="form-row">
                 <div class="col-md-4 mb-3">
@@ -74,8 +80,10 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <button class="btn btn-primary" id="submit-btn" type="submit">Submit form</button>
         </form>
+
+
     </div>
 </body>
 
