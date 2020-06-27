@@ -11,15 +11,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
 
-
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="module" src="{{ asset('js/form.js') }}"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    
+   
 </head>
 <input type="text" class="form-control">
 
@@ -46,7 +40,7 @@
                     </select>
 
 
-
+<br>
 
                     <div class="valid-feedback">
                         Looks good!

@@ -13,6 +13,8 @@ $( function() {
         currentText: "Now"
     });
 
+    $('.selectpicker').selectpicker();
+
     $('#submit-btn').click(function () {
         const start_date = $( "#start-date" ).datepicker( "getDate" );
         const end_date = $( "#end-date" ).datepicker( "getDate" );
