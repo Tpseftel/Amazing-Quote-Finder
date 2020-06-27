@@ -16,14 +16,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/form.js') }}"></script>
     <script>
+        $('#sandbox-container input').datepicker({
+        });
     </script>
-    $('#sandbox-container input').datepicker({
-    });
 </head>
 <input type="text" class="form-control">
 
@@ -32,22 +37,28 @@
         <h1 class=''>Form 1</h1>
 
         <form>
+            <!-- Company Symbol -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationServer01">Company Symbol</label>
-
                     <select data-live-search="true"  id="company-symbol"  class="selectpicker form-control"  >
                         <option>hello</option>
                         <option>no</option>
                         <option>yes</option>
                     </select>
-
-
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
             </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="datepicker">
+                </div>
+            </div>
+
+
+
 
             <div class="form-row">
                 <div class="col-md-4 mb-3">
