@@ -42,8 +42,20 @@ $( function() {
         const email = $('#email-input').val();
 
 
-        functionlowerThanToday()
+        function lowerThanToday(dateString){
+            let today = new Date();
+            today.setHours(0,0,0,0);
+            dateString = new Date (dateString);
+            dateString.setHours(0,0,0,0);
 
+            if(dateString <= today) {
+                return true;
+            }
+            return false;
+        }
+
+        console.log(`Is Valid date: ${isValidDate(start_date)}`);
+        console.log(`Is lower than today: ${lowerThanToday(start_date)}`);
         
 
 
@@ -62,20 +74,8 @@ $( function() {
 
 
 
-        console.log('Start Date:' + start_date );
-        console.log('End Date:' + end_date );
-        console.log('Copmany Symbol:' + company_symbol );
-        console.log('Email:' + email );
 
     });
-
-
-
-   
-
-
-
-
 
 
 });
