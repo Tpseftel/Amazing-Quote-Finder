@@ -33,8 +33,7 @@ $(function() {
     $('#company-select').change(function(){
       $('#symbol-input').val( $(this).val() );
     });
-
-
+    
     $('#submit-btn').click(function () {
         const start_date = $("#start-date").val();
         const end_date = $("#end-date").val();
@@ -42,21 +41,18 @@ $(function() {
         const email = $('#email-input').val();
         
         // Validate Start Date
-        if(!isValidDate(start_date)) console.log('Start date is invalid');
-        if(!lowerEqualDate(start_date, end_date)) console.log('Start date must be lower or equal than end date');
-        if(!lowerThanToday(start_date)) console.log('Start date must be lower or equal than today');
-
+        let sd_error = validateStartDate(start_date, end_date);
         // Validate End date
-        if(!isValidDate(end_date)) console.log('End date is invalid');
-        if(!greaterEqualDate(end_date, start_date)) console.log('End date must be lower or equal than Start date');
-        if(!lowerThanToday(end_date)) console.log('End date must be lower or equal than today');
-
+        let end_error = validateEndDate(end_date, start_date);
         // Validate Email
-        if(!isValidEmail(email)) console.log("Pleaze provide a valid email");
-        
+        let email_error = validateEmail(email);
 
-
-
+        if(sd_error || end_error || email_error){
+            alert(`Start Date Error:${sd_error} \n End Date Error:${end_error} \n Email Error:${email_error}`);
+            $('.email-error').html(email_error);
+            $('.start-date-error').html(sd_error);
+            $('.end-date-error').html(end_error);
+        }
     });
     
 });

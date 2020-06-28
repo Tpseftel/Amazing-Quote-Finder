@@ -11,8 +11,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script type="module" src="{{ asset('js/form.js') }}"></script>
+    
    
 </head>
 <input type="text" class="form-control">
@@ -56,7 +55,7 @@
                 <label for="start-date" class="text-capitalize font-weight-bold">Start Date: </label>
                     <input type="text"  placeholder="yyyy-mm-dd" value="{{old('start_date')}}" id="start-date" name="start_date"
                      class=" {{$errors->has('start_date') ? 'is-invalid' :''}}  form-control datepicker" required>
-                    <div class="invalid-feedback" id='start-error'>
+                    <div class="invalid-feedback start-date-error" >
                         @if ($errors->has('start_date'))
                            {{ $errors -> first('start_date')}}
                         @else
@@ -72,7 +71,7 @@
                 <label for="end-date" class=" text-capitalize font-weight-bold">End Date: </label>
                     <input type="text"  placeholder="yyyy-mm-dd" name="end_date" id="end-date" value="{{old('end_date')}}" 
                         class=" {{$errors->has('end_date') ? 'is-invalid' :''}}  form-control datepicker" required>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback end-date-error">
                         @if ($errors->has('end_date'))
                            {{ $errors -> first('end_date')}}
                         @else
@@ -88,7 +87,7 @@
                     <label for="email" class="font-weight-bold text-capitalize">Email:</label>
                     <br>
                     <input type="email" id="email-input" value="{{old('email')}}" class="{{$errors->has('email') ? 'is-invalid' :''}} form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email"required>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback email-error">
                     @if ($errors->has('email'))
                            {{ $errors -> first('email')}}
                         @else
@@ -101,6 +100,11 @@
             <button class="btn btn-primary" id="submit-btn" type="submit">Submit form</button>
         </form>
     </div>
+
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/validation.js') }}"></script>
+    <script type="module" src="{{ asset('js/form.js') }}"></script>
 </body>
 
 </html>

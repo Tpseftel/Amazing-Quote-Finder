@@ -57,3 +57,27 @@ function isValidDate(date_value) {
     return d.toISOString().slice(0,10) === date_value;
 }
 // console.log(`Is Valid date: ${isValidDate(start_date)}`);
+
+
+function validateEmail(email) {
+    if (!isValidEmail(email))
+        return "Pleaze provide a valid email";
+}
+
+function validateEndDate(end_date, start_date) {
+    if (!isValidDate(end_date))
+        return 'End date is invalid';
+    if (!greaterEqualDate(end_date, start_date))
+        return 'End date must be lower or equal than Start date';
+    if (!lowerThanToday(end_date))
+        return 'End date must be lower or equal than today';
+}
+
+function validateStartDate(start_date, end_date) {
+    if (!isValidDate(start_date))
+        return 'Start date is invalid';
+    if (!lowerEqualDate(start_date, end_date))
+        return 'Start date must be lower or equal than end date';
+    if (!lowerThanToday(start_date))
+        return 'Start date must be lower or equal than today';
+}
