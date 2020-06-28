@@ -41,9 +41,10 @@ public function getHistoryData(ValidateCompany $request)
     $start_date = strtotime($validated['start_date']);
     $end_date = strtotime($validated['end_date']);
 
-    $this->getHistoryQuotes($validated['company_symbol'], $start_date, $end_date);
+    
+    $quotes = $this->getHistoryQuotes($validated['company_symbol'], $start_date, $end_date);
 
-    return 'History Data';
+    return  view('quotes_display', compact('quotes'));
 }
 
 
