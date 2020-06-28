@@ -36,7 +36,13 @@ class CompanyController extends Controller
 public function getHistoryData(ValidateCompany $request)
 {
     $validated = $request->validated();
-    dd($validated);
+
+    // Convert str to timestamp
+    $start_date = strtotime($validated['start_date']);
+    $end_date = strtotime($validated['end_date']);
+
+    $this->getHistoryQuotes($validated['company_symbol'], $start_date, $end_date);
+
     return 'History Data';
 }
 
