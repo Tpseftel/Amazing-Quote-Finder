@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Client\Response;
 use App\Http\Requests\ValidateCompany;
 use App\Traits\ApiTrait;
-// use Illuminate\Support\Facades\Validator;
 
 class CompanyController extends Controller
 {
@@ -46,15 +45,12 @@ class CompanyController extends Controller
 
     public function validateSymbol(Request $request){
             $symbol = ($request->route('symbol'));
-
             $valid_symbols = array_column($this->getSymbols(), 'Symbol');
-            // dd($valid_symbols);
+            
             if(!in_array($symbol, $valid_symbols)){
                 return response("false", 200);
             } else{
                 return response("true", 200);
             }
-
-
     }
 }
