@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Latest compiled and minified CSS -->
-
-    
    
 </head>
 <input type="text" class="form-control">
@@ -21,7 +19,7 @@
         <h1 class=''>Form 1</h1>
         <form class="needs-validation" novalidate action="/history"  method="post">
           @csrf
-            <!-- Company Symbol -->
+            <!-- Company Name -->
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="company-select" class="text-capitalize font-weight-bold" >Company Name:</label>
@@ -34,8 +32,6 @@
                     <div class="invalid-feedback">
                         @if ($errors->has('company_symbol'))
                            {{ $errors -> first('company_symbol')}}
-                        @else
-                            Pleaze select a valid Symbol
                         @endif
                     </div>
                 </div>
@@ -58,8 +54,6 @@
                     <div class="invalid-feedback start-date-error" >
                         @if ($errors->has('start_date'))
                            {{ $errors -> first('start_date')}}
-                        @else
-                            Pleaze choose the Start Date.
                         @endif
                     </div>
                 </div>
@@ -74,8 +68,6 @@
                     <div class="invalid-feedback end-date-error">
                         @if ($errors->has('end_date'))
                            {{ $errors -> first('end_date')}}
-                        @else
-                            Pleaze choose the End Date.
                         @endif
                     </div>
                 </div>
@@ -88,10 +80,8 @@
                     <br>
                     <input type="email" id="email-input" value="{{old('email')}}" class="{{$errors->has('email') ? 'is-invalid' :''}} form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email"required>
                     <div class="invalid-feedback email-error">
-                    @if ($errors->has('email'))
+                        @if ($errors->has('email'))
                            {{ $errors -> first('email')}}
-                        @else
-                            Pleaze enter your email.
                         @endif
                     </div>
                 </div>
