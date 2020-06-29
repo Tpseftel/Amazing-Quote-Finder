@@ -42,11 +42,7 @@ trait ApiTrait {
                 dd($t);
             }
         
-            $data = $data->json();
-            $quotes = $data['prices'];
-
-        // return $data -> json();
-        
+            return $data->json();
     }
     
 }

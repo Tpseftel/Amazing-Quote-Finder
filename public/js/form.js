@@ -1,4 +1,3 @@
-const { default: Axios } = require("axios");
 
 // const moment = require("moment");
 $(function() {
