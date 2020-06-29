@@ -1,3 +1,5 @@
+const { default: Axios } = require("axios");
+
 // const moment = require("moment");
 $(function() {
     // SetUp Date Picker
@@ -13,11 +15,11 @@ $(function() {
     $('#symbol-input').val( $('#company-select').val() );
     // Set company symbol
     $('#company-select').change(function(){
-      $('#symbol-input').val( $(this).val() );
+        $('#symbol-input').val( $(this).val() );
     });
     
-
     $( ".needs-validation" ).submit(function( event ) {
+        let error = false;
         const start_date = $("#start-date").val();
         const end_date = $("#end-date").val();
         const company_symbol = $('#company-select').val();
@@ -30,11 +32,22 @@ $(function() {
         // Validate Email
         let email_error = validateEmail(email);
 
-        if(sd_error) $('.start-date-error').text(sd_error).show().fadeOut(3000);
-        if(end_error) $('.end-date-error').text(end_error).show().fadeOut(3000);
-        if(email_error) $('.email-error').text(email_error).show().fadeOut(3000);
-
-      event.preventDefault();
+        if(sd_error) {
+            $('.start-date-error').text(sd_error).show().fadeOut(3000);
+            error = true;
+        }
+        if(end_error) {
+            $('.end-date-error').text(end_error).show().fadeOut(3000);
+            error = true;
+        }
+        if(email_error) {
+            $('.email-error').text(email_error).show().fadeOut(3000);
+            error = true;
+        }
+        if(error){
+            event.stopPropagation();
+            event.preventDefault();
+        }
     });
     
 
