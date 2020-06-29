@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Http\Client\Response;
 use App\Http\Requests\ValidateCompany;
 use App\Traits\ApiTrait;
 // use Illuminate\Support\Facades\Validator;
@@ -29,18 +31,30 @@ class CompanyController extends Controller
         return view('company', compact('companies'));
     }
 
-public function getHistoryData(ValidateCompany $request) {
-    // Validate incoming request data
-    $validated = $request->validated();
+    public function getHistoryData(ValidateCompany $request) {
+        // Validate incoming request data
+        $validated = $request->validated();
 
-    // Convert string to timestamp
-    $start_date = strtotime($validated['start_date']);
-    $end_date = strtotime($validated['end_date']);
-    
-    $quotes = $this->getHistoryQuotes($validated['company_symbol'], $start_date, $end_date);
+        // Convert string to timestamp
+        $start_date = strtotime($validated['start_date']);
+        $end_date = strtotime($validated['end_date']);
+        
+        $quotes = $this->getHistoryQuotes($validated['company_symbol'], $start_date, $end_date);
 
-    return  view('quotes_display', compact('quotes'));
-}
+        return  view('quotes_display', compact('quotes'));
+    }
+
+    public function validateSymbol(Request $request){
+            $symbol = ($request->route('symbol'));
+
+            $valid_symbols = array_column($this->getSymbols(), 'Symbol');
+            // dd($valid_symbols);
+            if(!in_array($symbol, $valid_symbols)){
+                return response("false", 200);
+            } else{
+                return response("true", 200);
+            }
 
 
+    }
 }

@@ -75,7 +75,7 @@
             </tbody>
         </table>
 
-        <p class="text-danger"> Caution: <span class="font-weight-bold" style="font-size:1.3rem;">-1</span> value indicates that there is no available information for this field !!!</p>
+        <p class="text-danger"> Caution: Value <span class="font-weight-bold" style="font-size:1.3rem;">-1</span> indicates that there is no available information about this field !!!</p>
 
     </div>
 

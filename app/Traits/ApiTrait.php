@@ -12,8 +12,6 @@ trait ApiTrait {
 
     protected $api_key = '';
 
-
-
     public function getSymbols()
     {
         try {

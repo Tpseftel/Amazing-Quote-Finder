@@ -1,4 +1,10 @@
-function isValidEmail(email){
+
+async function  isValidSymbol(symbol){
+    let data = await axios.get(`http://localhost:8000/validate/${symbol}`);
+   return data.data;
+}
+
+function isValidEmail(email) {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(email.match(mailformat)){
         return true;

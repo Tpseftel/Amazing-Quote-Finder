@@ -23,7 +23,14 @@ $(function() {
         const end_date = $("#end-date").val();
         const company_symbol = $('#company-select').val();
         const email = $('#email-input').val();
-        
+
+        // Validate company symbol
+        isValidSymbol(company_symbol).then(result => {
+            if(result == false)
+            $('.symbol-error').text("Pleaze choose a valid Symbol").show().fadeOut(3000);            
+            error = true;
+        });
+       
         // Validate Start Date
         let sd_error = validateStartDate(start_date, end_date);
         // Validate End date
@@ -49,7 +56,7 @@ $(function() {
         }
     });
     
-
+    
     
 });
 
