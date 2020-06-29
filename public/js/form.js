@@ -1,23 +1,5 @@
 // const moment = require("moment");
 $(function() {
-  // Set up Form Validation
-   (function() {
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-    })();
-
     // SetUp Date Picker
     $( ".datepicker" ).datepicker({
         dateFormat: 'yy-mm-dd',
@@ -34,7 +16,8 @@ $(function() {
       $('#symbol-input').val( $(this).val() );
     });
     
-    $('#submit-btn').click(function () {
+
+    $( ".needs-validation" ).submit(function( event ) {
         const start_date = $("#start-date").val();
         const end_date = $("#end-date").val();
         const company_symbol = $('#company-select').val();
@@ -47,13 +30,21 @@ $(function() {
         // Validate Email
         let email_error = validateEmail(email);
 
-        if(sd_error || end_error || email_error){
-            alert(`Start Date Error:${sd_error} \n End Date Error:${end_error} \n Email Error:${email_error}`);
-            $('.email-error').html(email_error);
-            $('.start-date-error').html(sd_error);
-            $('.end-date-error').html(end_error);
-        }
+        if(sd_error) $('.start-date-error').text(sd_error).show().fadeOut(3000);
+        if(end_error) $('.end-date-error').text(end_error).show().fadeOut(3000);
+        if(email_error) $('.email-error').text(email_error).show().fadeOut(3000);
+
+        // if(sd_error || end_error || email_error){
+        //     // alert(`Start Date Error:${sd_error} \n End Date Error:${end_error} \n Email Error:${email_error}`);
+        //     $('.start-date-error').text(sd_error).show().fadeOut(3000);
+        //     $('.end-date-error').text(end_error).show().fadeOut(3000);
+        //     $('.email-error').text(email_error).show().fadeOut(3000);
+        // }
+     
+      event.preventDefault();
     });
+    
+
     
 });
 
