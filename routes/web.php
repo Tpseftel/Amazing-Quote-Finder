@@ -13,11 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', 'CompanyController@index');
 Route::post('/history', 'CompanyController@getHistoryData');
-Route::get('/company', 'CompanyController@index');
 
 
