@@ -35,7 +35,7 @@
                     <th scope="row"> {{ $key }} </th>
 
                     @if(isset($quote['date']))
-                        <td> {{ $quote['date'] }} </td>    
+                        <td> {{ date('Y-m-d', $quote['date']) }} </td>    
                     @else
                         <td> No data </td>    
                     @endif
