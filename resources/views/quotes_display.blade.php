@@ -17,6 +17,7 @@
 <body>
 
     <div class="container">
+    <h1>History Quotes</h1>
         <table id="table_quotes" class="display table">
             <thead>
                 <tr>
@@ -37,45 +38,44 @@
                     @if(isset($quote['date']))
                         <td> {{ date('Y-m-d', $quote['date']) }} </td>    
                     @else
-                        <td> No data </td>    
+                        <td > {{$x=-1}} </td>    
                     @endif
 
                     @if(isset($quote['open']))
                         <td> {{ $quote['open'] }} </td>
                     @else
-                        <td> No data </td>    
+                        <td > {{$x=-1}} </td>    
                     @endif
 
                     @if(isset($quote['high']))
                         <td> {{ $quote['high'] }} </td>
                     @else
-                        <td> No data </td>    
+                        <td > {{$x=-1}} </td>    
                     @endif
 
                     @if(isset($quote['low']))
                         <td> {{ $quote['low'] }} </td>
                     @else
-                        <td> No data </td>    
+                        <td > {{$x=-1}} </td>    
                     @endif
 
                     @if(isset($quote['close']))
                         <td> {{ $quote['close'] }} </td>
                     @else
-                        <td> No data </td>    
+                        <td > {{$x=-1}} </td>    
                     @endif
 
                     @if(isset($quote['volume']))
                         <td> {{ $quote['volume'] }} </td>
                     @else
-                        <td> No data </td>    
+                        <td > {{$x=-1}} </td>    
                     @endif
                 </tr>
                 @endforeach
-
-                
-                
             </tbody>
         </table>
+
+        <p class="text-danger"> Caution: <span class="font-weight-bold" style="font-size:1.3rem;">-1</span> value indicates that there is no available information for this field !!!</p>
 
     </div>
 
