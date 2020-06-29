@@ -34,13 +34,6 @@ $(function() {
         if(end_error) $('.end-date-error').text(end_error).show().fadeOut(3000);
         if(email_error) $('.email-error').text(email_error).show().fadeOut(3000);
 
-        // if(sd_error || end_error || email_error){
-        //     // alert(`Start Date Error:${sd_error} \n End Date Error:${end_error} \n Email Error:${email_error}`);
-        //     $('.start-date-error').text(sd_error).show().fadeOut(3000);
-        //     $('.end-date-error').text(end_error).show().fadeOut(3000);
-        //     $('.email-error').text(email_error).show().fadeOut(3000);
-        // }
-     
       event.preventDefault();
     });
     

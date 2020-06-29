@@ -59,21 +59,22 @@ function isValidDate(date_value) {
 // console.log(`Is Valid date: ${isValidDate(start_date)}`);
 
 
+
+
 function validateEmail(email) {
-    if (!isValidEmail(email))
-        return "Pleaze provide a valid email";
+    if (!email) return 'Email is required';
+    if (!isValidEmail(email)) return "Pleaze provide a valid email";
 }
 
 function validateEndDate(end_date, start_date) {
-    if (!isValidDate(end_date))
-        return 'End date is invalid';
-    if (!greaterEqualDate(end_date, start_date))
-        return 'End date must be lower or equal than Start date';
-    if (!lowerThanToday(end_date))
-        return 'End date must be lower or equal than today';
+    if (!end_date) return 'End Date is required';
+    if (!isValidDate(end_date)) return 'End date is invalid';
+    if (!greaterEqualDate(end_date, start_date)) return 'End date must be lower or equal than Start date';
+    if (!lowerThanToday(end_date)) return 'End date must be lower or equal than today';
 }
 
 function validateStartDate(start_date, end_date) {
+    if (!start_date) return 'Start Date is required';
     if (!isValidDate(start_date))
         return 'Start date is invalid';
     if (!lowerEqualDate(start_date, end_date))
