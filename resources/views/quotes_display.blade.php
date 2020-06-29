@@ -33,14 +33,47 @@
                 @foreach($quotes['prices'] as $key => $quote)
                 <tr>
                     <th scope="row"> {{ $key }} </th>
-                    <td> {{ $quote['date'] }} </td>
-                    <td> {{ $quote['open'] }} </td>
-                    <td> {{ $quote['high'] }} </td>
-                    <td> {{ $quote['low'] }} </td>
-                    <td> {{ $quote['close'] }} </td>
-                    <td> {{ $quote['volume'] }} </td>
+
+                    @if(isset($quote['date']))
+                        <td> {{ $quote['date'] }} </td>    
+                    @else
+                        <td> No data </td>    
+                    @endif
+
+                    @if(isset($quote['open']))
+                        <td> {{ $quote['open'] }} </td>
+                    @else
+                        <td> No data </td>    
+                    @endif
+
+                    @if(isset($quote['high']))
+                        <td> {{ $quote['high'] }} </td>
+                    @else
+                        <td> No data </td>    
+                    @endif
+
+                    @if(isset($quote['low']))
+                        <td> {{ $quote['low'] }} </td>
+                    @else
+                        <td> No data </td>    
+                    @endif
+
+                    @if(isset($quote['close']))
+                        <td> {{ $quote['close'] }} </td>
+                    @else
+                        <td> No data </td>    
+                    @endif
+
+                    @if(isset($quote['volume']))
+                        <td> {{ $quote['volume'] }} </td>
+                    @else
+                        <td> No data </td>    
+                    @endif
                 </tr>
                 @endforeach
+
+                
+                
             </tbody>
         </table>
 
